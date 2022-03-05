@@ -1,0 +1,97 @@
+body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-left: 50px;
+  max-width: 650px;
+}
+h1{
+  text-align: center;
+}
+.grid {
+  position: relative;
+    
+    width: 600px;
+    height: 400px;
+    border: solid 1px black;
+    margin-top: 20px;
+  }
+
+  .ball {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: red;
+  }
+
+  .rectangle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(0, 255, 136);
+    border: 1px solid black;
+  }
+  .button-menu{
+    position: relative;
+    padding-top: 10px;
+    text-align: center;
+   
+  }
+
+  button{
+    height: 50px;
+    width: 100px;
+  }
+
+  .square-button{
+    height: 40px;
+    width: 40px
+
+  }
+
+  #btn-stop{
+    background-color: red;
+  }
+  #btn-play{
+    background-color: green;
+  }
+  #btn-bgcolor1{
+    background-color: black;
+  }
+  #btn-bgcolor2{
+    background-color: white;
+  }
+  #btn-bgcolor3{
+    background-color: yellow;
+  }
+  #btn-bgcolor4{
+    background-color: red;
+  }
+
+  #btn-elmcolor1{
+    background-color: black;
+  }
+  #btn-elmcolor2{
+    background-color: white;
+  }
+  #btn-elmcolor3{
+    background-color: yellow;
+  }
+  #btn-elmcolor4{
+    background-color: red;
+  }
+
+  #btn-vel-down{
+    background-color: beige;
+    font-weight: 400;
+    font-size: 25px;
+    margin-left: 10px;
+   
+
+    
+  }
+  #btn-vel-up{
+    background-color: beige;
+    font-weight: 400;
+    font-size: 25px;
+    
+  }
