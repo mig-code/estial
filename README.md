@@ -1,4 +1,4 @@
-# estial
+# Estial
 An aplication for visual estimulation
 
 Two year ago i made a version for Android using AppyBuilder a no code tool:
@@ -8,4 +8,5 @@ When i started learning to code i wanted to create this app by my own.
 
 My goal is to make a better version of it with new features.
 
-Feel free to improve it
+Feel free to improve it:
+https://mig-code.github.io/estial/
