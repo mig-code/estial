@@ -2,17 +2,21 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Estial</title>
+    <title>ESTIAL - Visual stimulation exercises</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <h1 >ESTIAL - Visual stimulation exercises</h1>
 
-<div class ="button-menu">
-    
-    <button id="btn-horizontal-mode" onclick="modeHorizontal()"> Horizontal </button> 
-    <button id="btn-vertical-mode" onclick="modeVertical()"> Vertical </button> 
-     
+
+<div class="toggle-menu">
+    <button id="btn-toggle-exercise" onclick="openMenuExercise()">Select Mode</button>
+    <div id ="button-menu-top">
+        
+        <button id="btn-horizontal-mode" onclick="modeHorizontal()"> Horizontal </button> 
+        <button id="btn-vertical-mode" onclick="modeVertical()"> Vertical </button> 
+        
+    </div>
 </div>
 
 <div class="grid"></div>
