@@ -1,6 +1,6 @@
 const grid = document.querySelector(".grid")
-const boardWidth = 1000
-const boardHeight = 550
+const boardWidth = 950
+const boardHeight = 500
 let xDirection = 4
 let yDirection = 0
 let rectangleWidth=60
@@ -17,26 +17,30 @@ let rectangleCurrentPosition=rectangleStart
 
 let timerId=""
 let speed= 12
+let randomSpeed=800
 
-let btnHorizontal =document.querySelector("#btn-horizontal-mode")
-let btnVertical= document.querySelector("#btn-vertical-mode")
+const btnHorizontal =document.querySelector("#btn-horizontal-mode")
+const btnVertical= document.querySelector("#btn-vertical-mode")
+const btnRandom= document.querySelector("#btn-random-mode")
+const menuCenter =document.querySelector(".button-menu-center")
+const menuRandom =document.querySelector(".button-menu-random")
+
+
 
 
 
 let exerciseVertical= false
 let exerciseHorizontal =true
+let exerciseRandom =false;
 let elementisPause=true
 
 let isMenuExerciseHidden=true;
+let isMenuColorsHidden=true;
 
 //start app
 
 window.onload =playButton()
 btnHorizontal.style.border="solid 3px #541A60"
-console.log(centerYleft)
-console.log(centerXLeft)
-console.log(centerXBottom)
-console.log(centerYBottom)
 grid.style.width=boardWidth +'px'
 grid.style.height= boardHeight+'px'
 
@@ -65,12 +69,24 @@ function moveRectangleHorizontal() {
    
 }
 
+//move rectangle vertical
+
 function moveRectangleVertical() {
     rectangleCurrentPosition[0] += xDirection
     rectangleCurrentPosition[1] += yDirection
     drawRectangle()
     checkForhitVertical()
    
+}
+
+//draw rectangle random
+
+function drawRectangleRandom(){
+
+    let randomNumberLeft = Math.floor(Math.random()*(boardWidth-rectangleWidth))
+    let randomNumberBottom= Math.floor(Math.random()*(boardHeight-rectangleHeight))
+   rectangle.style.left = randomNumberLeft + 'px'   
+   rectangle.style.bottom =-randomNumberBottom + 'px' 
 }
 
 //check for wall hit horizontal
@@ -162,6 +178,26 @@ function speedDown(){
     }
 }
 
+//change Speed Random
+
+const btnVelUpRandom =document.getElementById("btn-vel-up-random")
+btnVelUpRandom.addEventListener("click",function(){
+    if(randomSpeed>50){
+        randomSpeed-=100
+        modeRandom()
+    }
+
+})
+const btnVelDownRandom =document.getElementById("btn-vel-down-random")
+btnVelDownRandom.addEventListener("click",function(){
+    if(randomSpeed<5000){
+        randomSpeed+=200
+        modeRandom()
+    }
+
+})
+
+
 /// CHANGE EXERCISE
 
 //Change Mode  horizontal
@@ -177,6 +213,9 @@ function modeHorizontal(){
     exerciseVertical=false
     btnHorizontal.style.border="solid 3px #541A60"
     btnVertical.style.border="solid 1px black"
+    btnRandom.style.border="solid 1px black"
+    menuRandom.style.display="none"
+    menuCenter.style.display="block"
 
 }
 
@@ -193,7 +232,22 @@ function modeVertical(){
     exerciseVertical=true
     btnHorizontal.style.border="solid 1px black"
     btnVertical.style.border="solid 3px #541A60"
+    btnRandom.style.border="solid 1px black"
+    menuCenter.style.display="block"
+    menuRandom.style.display="none"
 
+}
+
+//Change Mode random
+
+function modeRandom(){
+    clearInterval(timerId)
+    timerId=setInterval(drawRectangleRandom,randomSpeed)
+    btnHorizontal.style.border="solid 1px black"
+    btnVertical.style.border="solid 1px black"
+    btnRandom.style.border="solid 3px #541A60"
+    menuRandom.style.display="block"
+    menuCenter.style.display="none"
 }
 
 
@@ -238,21 +292,52 @@ function changeElementColor5(){
 }
 
 
-//Open Menu
+//Open Toggle Menu
 
 const selectExerciseMenu =document.getElementById("btn-toggle-exercise")
-const exerciseMenu=document.getElementById("button-menu-top")
+const exerciseMenu=document.getElementById("menu-top-exercise")
 
 function openMenuExercise(){
     if(isMenuExerciseHidden){
         exerciseMenu.style.display="block"
-        isMenuExerciseHidden=false
+        
     }else{
         exerciseMenu.style.display="none"
-        isMenuExerciseHidden=true
-
-    }
+        
+    }   
+    isMenuExerciseHidden= !isMenuExerciseHidden
     
+    if(!isMenuColorsHidden){
+        colorsMenu.style.display="none"
+        isMenuColorsHidden =!isMenuColorsHidden
+    }
     
 
 }
+
+const selectColorsMenu =document.getElementById("btn-toggle-color") 
+const colorsMenu =document.getElementById("menu-top-colors")
+
+function openMenuColors(){
+    if(isMenuColorsHidden){
+        colorsMenu.style.display="block"
+    
+        
+    }else{
+        colorsMenu.style.display="none"
+    }
+
+    isMenuColorsHidden =!isMenuColorsHidden
+    
+
+    if(!isMenuExerciseHidden){
+        exerciseMenu.style.display="none"
+        isMenuExerciseHidden= !isMenuExerciseHidden
+    }
+        
+
+    
+
+
+}
+
