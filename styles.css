@@ -21,6 +21,8 @@ h1{
     border: solid 1px black;
     margin-top: 10px;
     background-color: white;
+    border-radius: 3px;
+    box-shadow: 5px 5px #f0ecec;
   }
 
 a:link{
@@ -39,12 +41,7 @@ a:hover{
     background-color: #178EDE;
     border: 1px solid black;
   }
-  .button-menu{
-    position: relative;
-    padding-top: 10px;
-    text-align: center;
-   
-  }
+  
 
 
   /*Display Menu*/
@@ -65,46 +62,80 @@ a:hover{
 
 
   button{
-    height: 50px;
-    width: 100px;
+    height: 60px;
+    width: 120px;
     cursor: pointer;
+    margin-right: 10px;
+    font-weight: bold;
   }
   button:hover{
     border: solid 3px black;
   }
   
-  #btn-toggle-exercise{
-    height: 25px;
+  #btn-toggle-exercise, 
+  #btn-toggle-color{
+    height: 35px;
     width: 150px;
     font-size: 14px;
     background-color: black;
     color: white;
     cursor: pointer;
+    border-radius: 3px;
   }
-  #btn-toggle-exercise:hover{
+  #btn-toggle-exercise:hover,
+  #btn-toggle-color:hover{
     color: black;
     background-color: white;
 
   }
 
+#menu-top-exercise, #menu-top-colors{
+  display:none;
+}
 
+.button-menu{
+  
+  margin-top: 10px;
+  text-align: left;
+ 
+}
+
+.button-menu-center{
+  
+  margin-top: 10px;
+ 
+}
+
+.button-menu-random{
+
+  margin-top: 10px;
+  text-align: center;
+
+  display:none;
+}
   .square-button{
-    height: 50px;
-    width: 50px
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
   }
-  #btn-horizontal-mode,#btn-vertical-mode{
+  #btn-horizontal-mode,
+  #btn-vertical-mode,
+  #btn-random-mode{
     
     border-radius: 6px;
     background-color: white;
     border: solid 1px black;
     font-size: 15px;
     font-weight: bold;
-    height: 40px;
-    width: 100px;
+    height: 50px;
+    width: 120px;
     margin-top: 10px;
-    max-width: 300px;
+    
   
   }
+  
+
+  
 
   #btn-stop{
     background-color: #FE5D5F;
@@ -160,7 +191,7 @@ a:hover{
     background-color: #DAE3E7;
     border-radius: 4px;
     font-size: large;
-    margin-left: 10px;
+    margin-left: 30px;
     
   }
   #btn-vel-up{

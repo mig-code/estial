@@ -11,37 +11,50 @@
 
 <div class="toggle-menu">
     <button id="btn-toggle-exercise" onclick="openMenuExercise()">Select Mode</button>
-    <div id ="button-menu-top">
+    <button id="btn-toggle-color" onclick="openMenuColors()">Select Colors</button>
+    <div id ="menu-top-exercise">
         
         <button id="btn-horizontal-mode" onclick="modeHorizontal()"> Horizontal </button> 
         <button id="btn-vertical-mode" onclick="modeVertical()"> Vertical </button> 
+        <button id="btn-random-mode" onclick="modeRandom()"> Random </button> 
         
     </div>
+    <div id="menu-top-colors">
+        <div class ="button-menu"> 
+            
+            <button id="btn-bgcolor1" onclick="changeBackgroudColor1()"></button> 
+            <button id="btn-bgcolor2" onclick="changeBackgroudColor2()"> </button> 
+            <button id="btn-bgcolor3" onclick="changeBackgroudColor3()"> </button> 
+            <button id="btn-bgcolor4" onclick="changeBackgroudColor4()"> </button>
+            <button id="btn-bgcolor5" onclick="changeBackgroudColor5()"> </button>   
+        </div>
+        <div class ="button-menu">
+            <button class="square-button" id="btn-elmcolor1" onclick="changeElementColor1()"></button> 
+            <button class="square-button"id="btn-elmcolor2" onclick="changeElementColor2()"> </button> 
+            <button class="square-button"id="btn-elmcolor3" onclick="changeElementColor3()"> </button> 
+            <button class="square-button"id="btn-elmcolor4" onclick="changeElementColor4()"> </button>
+            <button class="square-button"id="btn-elmcolor5" onclick="changeElementColor5()"> </button>
+            
+        </div>
+    </div>
+    
 </div>
 
 <div class="grid"></div>
-<div class ="button-menu">
+<div class ="button-menu-center">
 
 <button id="btn-stop" onclick="stopButton()"> RESET</button>
 <button id="btn-play" onclick="playButton()"> PLAY</button>
 <button class="square-button" id="btn-vel-down" onclick="speedDown()"> - </button>
 <button class="square-button"id="btn-vel-up" onclick="speedUp()"> + </button>
 </div>
-<div class ="button-menu"> 
-    <button id="btn-bgcolor1" onclick="changeBackgroudColor1()"></button> 
-    <button id="btn-bgcolor2" onclick="changeBackgroudColor2()"> </button> 
-    <button id="btn-bgcolor3" onclick="changeBackgroudColor3()"> </button> 
-    <button id="btn-bgcolor4" onclick="changeBackgroudColor4()"> </button>
-    <button id="btn-bgcolor5" onclick="changeBackgroudColor5()"> </button>   
+
+<div class="button-menu-random">
+    <button class="square-button" id="btn-vel-down-random"> - </button>
+    <button class="square-button"id="btn-vel-up-random" > + </button>
+
 </div>
-<div class ="button-menu">
-    <button class="square-button" id="btn-elmcolor1" onclick="changeElementColor1()"></button> 
-    <button class="square-button"id="btn-elmcolor2" onclick="changeElementColor2()"> </button> 
-    <button class="square-button"id="btn-elmcolor3" onclick="changeElementColor3()"> </button> 
-    <button class="square-button"id="btn-elmcolor4" onclick="changeElementColor4()"> </button>
-    <button class="square-button"id="btn-elmcolor5" onclick="changeElementColor5()"> </button>
-     
-</div>
+
 <footer>
     Estial is an app where you can find exercises for visual estimulation. Created by <a href="https://github.com/mig-code">Mig-code</a>
 </footer>
